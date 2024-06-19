@@ -7,6 +7,7 @@ a = input("enter name 1:")
 b = input("enter name 2:") 
 c = input("enter name 3:") 
 d = input("enter name 4:") 
+e = input("enter your instagram profile link:")
 chrome_path = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
 webbrowser.register('chrome', None,  
                     webbrowser.BackgroundBrowser(chrome_path)) 
@@ -33,7 +34,10 @@ mouse.click('left')
 time.sleep(0.3)
 mouse.move(840,650)
 mouse.click('left')
-mouse.move(840,400)
+mouse.move(840,430)
+mouse.click('left')
+
+
 
 
 
