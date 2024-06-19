@@ -1,4 +1,4 @@
-import mouse,keyboard,colorama,random,os,pyfiglet,webbrowser,time,string
+import mouse,keyboard,colorama,random,os,pyfiglet,webbrowser,time,string,re
 from tempMail import EMail
 from colorama import Style,Fore
 from pyfiglet import Figlet
@@ -9,6 +9,7 @@ b = EMail()
 c = ''.join(random.choices(string.ascii_letters, k=8))
 d = ''.join(random.choices(string.ascii_letters, k=10)) 
 e = input("enter your instagram profile link:")
+msg = b.wait_for_message()
 print(f"Generated email address: {b.address}")
 print("Generated password:" , d)
 chrome_path = r"C:\Program Files\Google\Chrome\Application\chrome.exe"
@@ -39,13 +40,12 @@ mouse.move(840,650)
 mouse.click('left')
 mouse.move(840,430)
 mouse.click('left')
-g = input("enter otp:")
-keyboard.press_and_release("alt+tab")
-time.sleep(1)
-keyboard.press_and_release("ctrl+tab")
-time.sleep(1)
-mouse.move(840,430)
-keyboard.write(g)
+body = msg.body
+integers = re.findall(r'\d+', body)
+print("otp found :" , integers)
+
+
+
 
 
 
